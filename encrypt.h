@@ -49,7 +49,7 @@ void encrypt(int maxSize){
 	}
 	
 	for(j=0; j<i; j++){
-		encrypted[j] -= (keys+j);
+		encrypted[j] -= (100-(keys+j));
 	}
 	
 	printf("\n Data yang telah terenkripsi adalah: \n ");

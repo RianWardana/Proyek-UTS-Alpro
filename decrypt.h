@@ -46,7 +46,7 @@ void decrypt(int size){
 	}
 	
 	for(j=0;j<i;j++){
-		decrypted[j] += (keys+j);
+		decrypted[j] += (100-(keys+j));
 	}
 
 	printf("\n Data yang telah terdekripsi adalah: \n ");
