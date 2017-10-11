@@ -29,7 +29,7 @@ void decrypt(int size){
 	
 	char arrKey[5];
 	
-	printf("\n Tulis key: ");
+	printf("\n\n Tulis key: ");
 	scanf(" %[^\n]%*c", arrKey);
 			
 	int maxKeyNumber = 0;
@@ -53,7 +53,7 @@ void decrypt(int size){
 	for(j=0;j<i;j++){
 		printf("%c",decrypted[j]);
 	}
-	printf("\n Data terdekripsi telah ditulis ke decrypted.txt\n");
+	printf("\n\n Data terdekripsi telah ditulis ke decrypted.txt\n");
 	
 	//write array to decrypted.txt
 	FILE *ofp;

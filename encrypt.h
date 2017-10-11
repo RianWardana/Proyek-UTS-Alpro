@@ -32,7 +32,7 @@ void encrypt(int maxSize){
 		
 	char arrKey[5];
 	
-	printf("\n Tulis key: ");
+	printf("\n\n Tulis key: ");
 	scanf(" %[^\n]%*c", arrKey);
 			
 	int maxKeyNumber = 0;
@@ -56,7 +56,7 @@ void encrypt(int maxSize){
 	for(j=0;j<i;j++){
 		printf("%c", encrypted[j]);
 	}
-	printf("\n Data terinkripsi telah ditulis ke encrypted.txt\n");
+	printf("\n\n Data terinkripsi telah ditulis ke encrypted.txt\n");
 	
 	//write array to encrypted.txt
 	FILE *ofp;
