@@ -30,17 +30,7 @@ void encrypt(int maxSize){
 		
 	fclose(fp);
 		
-	char arrKey[5];
-	
-	printf("\n\n Tulis key: ");
-	scanf(" %[^\n]%*c", arrKey);
-			
-	int maxKeyNumber = 0;
-	for (i = 0; i < 5; i++) {
-		if (arrKey[i] > maxKeyNumber) maxKeyNumber = arrKey[i];
-	}
-			
-	keys = maxKeyNumber;
+	keys = getKey();
 	
 	i = 0;
 	while(teks[i] != '\0'){
@@ -58,7 +48,7 @@ void encrypt(int maxSize){
 	}
 	printf("\n\n Data terinkripsi telah ditulis ke encrypted.txt\n");
 	
-	//write array to encrypted.txt
+	// write array to encrypted.txt
 	FILE *ofp;
 	ofp = fopen("encrypted.txt","w");
 	

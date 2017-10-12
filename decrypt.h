@@ -11,7 +11,7 @@ void decrypt(int size){
 	fp = fopen(fname,"r");
 	
 	if(fp == NULL){
-		printf(" Failed to open");
+		printf(" File tidak ditemukan.");
 		sleep(1);
 		mainMenu();
 	}
@@ -27,17 +27,7 @@ void decrypt(int size){
 		
 	fclose(fp);
 	
-	char arrKey[5];
-	
-	printf("\n\n Tulis key: ");
-	scanf(" %[^\n]%*c", arrKey);
-			
-	int maxKeyNumber = 0;
-	for (i = 0; i < 5; i++) {
-		if (arrKey[i] > maxKeyNumber) maxKeyNumber = arrKey[i];
-	}
-			
-	keys = maxKeyNumber;
+	keys = getKey();
 
 	i = 0;
 	while(teks[i]!='\0'){

@@ -2,6 +2,7 @@
 #include "header.h"
 #include "encrypt.h"
 #include "decrypt.h"
+#include "getKey.h"
 
 int main(){	
 	int pilih;

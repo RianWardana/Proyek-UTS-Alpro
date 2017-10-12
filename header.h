@@ -4,8 +4,10 @@ void printHeader();
 int mainMenu();
 int helpMenu();
 
+
+
 int mainMenu(){
-	int size=1000,pilih;
+	int size=1000, pilih;
 	char key,rpt;
 	char arr[size];
 	
