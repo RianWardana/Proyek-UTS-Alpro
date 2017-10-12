@@ -1,3 +1,6 @@
+// Ida Bagus Krishna Yoga Utama (1506716983)
+// Nurian Satya Wardana (1506717071)
+
 #include <stdio.h>
 
 void printHeader();
@@ -11,7 +14,7 @@ int mainMenu(){
 	char key,rpt;
 	char arr[size];
 	
-	do{
+	do {
 		printHeader();
 				
 		printf("\n Menu");
@@ -54,7 +57,7 @@ void printHeader(){
 	system("cls");
 		
 	printf("########################################################################\n"
-		   "#                  ENIGMOO - Word Encoder and Decoder                  #\n"	
+		   "#                ENIGMOO - Word Encryption-Decryption                  #\n"	
 		   "#                                Oleh :                                #\n"
 		   "#              1. Ida Bagus Krishna Yoga Utama - 1506716983            #\n"
            "#                 2. Nurian Satya Wardana - 1506717071                 #\n"
@@ -71,7 +74,7 @@ int helpMenu(){
 	system("cls");
 	
 	printf("########################################################################\n"
-		   "#                  ENIGMOO - Word Encoder and Decoder                  #\n"	
+		   "#                ENIGMOO - Word Encryption-Decryption                  #\n"	
 		   "#                                Oleh :                                #\n"
 		   "#              1. Ida Bagus Krishna Yoga Utama - 1506716983            #\n"
            "#                 2. Nurian Satya Wardana - 1506717071                 #\n"

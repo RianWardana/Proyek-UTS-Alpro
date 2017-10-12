@@ -1,3 +1,6 @@
+// Ida Bagus Krishna Yoga Utama (1506716983)
+// Nurian Satya Wardana (1506717071)
+
 #include <stdio.h>
 
 void decrypt(int size){
