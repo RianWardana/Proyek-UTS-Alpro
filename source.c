@@ -8,28 +8,41 @@
 #include "getKey.h"
 
 int main(){	
-	int pilih;
+	char pilih;
+	char rpt1;
 
-	printHeader();
+	do{
+		
+		printHeader();
+		
+		printf("\n 1. Masuk ke Menu Encrypt-Decrypt \n"
+			   " 2. Petunjuk Penggunaan Program \n"
+			   " 3. Exit \n"
+			   "\n"
+			   " Masukkan pilihan Anda (1/2/3): ");
+		scanf(" %c", &pilih);
+		
+		switch(pilih){
+			case '1':
+				mainMenu();
+				break;
+			case '2' :
+				helpMenu();
+				break;
+			case '3' :
+				return 0;
+				break;
+			default :
+				printf(" ERROR - Masukkan input yang sesuai!\n");
+				break;
+		}
+		printf("\n Apakah ingin memasukkan kata lagi? "
+			   "\n Pilih (y) untuk kembali ke awal"
+			   "\n Pilih (n) untuk keluar dari program"
+			   "\n Pilihan anda (y/n) : ");
+		scanf(" %c", &rpt1);
 	
-	printf("\n 1. Masuk ke Menu Encrypt-Decrypt \n"
-		   " 2. Petunjuk penggunaan program \n"
-		   " 3. Exit \n"
-		   "\n"
-		   " Masukkan pilihan Anda (1/2/3): ");
-	scanf("%d", &pilih);
-	
-	switch(pilih){
-		case 1 :
-			mainMenu();
-			break;
-		case 2 :
-			helpMenu();
-			break;
-		case 3 :
-			return 0;
-			break;
-	}
+	}while(rpt1 == 'y');
 	
 	return 0;
 }
