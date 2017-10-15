@@ -6,13 +6,18 @@
 int getKey() {
 	int i, j, temp;
 	int keysLength = 0;
+	
+	// Jumlah maksimal karakter yang bisa ditulis ialah 32,
+	// namun user dapat menuliskan key dengan panjang kurang dari itu
 	char keys[32];
 	
 	// Meminta user untuk menulis key
 	printf("\n\n Tulis key: ");
 	scanf(" %[^\n]%*c", &keys);
 	
-	// Mencari berapa panjang key yang ditulis user
+	// Mencari berapa panjang key yang ditulis user.
+	// Ini berguna saat user menuliskan key dengan panjang kurang dari 32 karakter,
+	// program tidak perlu melakukan pengulangan sebanyak 32 kali.
 	while(keys[keysLength] != '\0') keysLength++;
 	int lastIndex = keysLength - 1;
 	
@@ -27,6 +32,7 @@ int getKey() {
 		}
 	}
 	
-	// Ouput fungsi ini ialah kode ASCII dari median key
+	// Ouput fungsi ini ialah kode ASCII dari median key.
+	// Bilangan bulat inilah yang selanjutnya digunakan pada algoritma enkripsi dan dekripsi.
 	return keys[keysLength/2];
 }

@@ -53,7 +53,9 @@ void encrypt(int maxSize){
 	// Deklarasi array untuk menyimpan hasil data terenkripsi
 	int encrypted[length];
 	
-	// Mengenkripsi data, menampilkannya, dan menulisnya ke file
+	// Mengenkripsi data, menampilkannya, dan menulisnya ke file.
+	// Metode enkripsi ialah "encrypted = representasi ASCII - (100 - (key + urutan karakter))"
+	// Apabila metode enkripsi ingin diubah, maka metode dekripsi juga harus diubah menyesuaikannya
 	printf("\n Data yang telah terenkripsi adalah: \n ");
 	for(i = 0; i < length; i++){
 		encrypted[i] = isiFile[i] - (100-(key+i)); 

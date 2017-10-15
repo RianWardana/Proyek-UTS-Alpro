@@ -1,6 +1,10 @@
 // Ida Bagus Krishna Yoga Utama (1506716983)
 // Nurian Satya Wardana (1506717071)
 
+// Algoritma pada file ini serupa dengan algoritma pada
+// file encrpyt.h. Sehingga penjelasan per bagian untuk 
+// algoritma enkripsi-dekripsi ditulis di file encrpyt.h
+
 #include <stdio.h>
 
 void decrypt(int maxSize){
