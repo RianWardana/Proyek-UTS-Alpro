@@ -47,9 +47,13 @@ void encrypt(int maxSize){
 		mainMenu();
 	}
 	
+	// Memanggil fungsi getKey() lalu meng-assign hasil output dari fungsi tersebut ke variabel key
 	int key = getKey();
+	
+	// Deklarasi array untuk menyimpan hasil data terenkripsi
 	int encrypted[length];
 	
+	// Mengenkripsi data, menampilkannya, dan menulisnya ke file
 	printf("\n Data yang telah terenkripsi adalah: \n ");
 	for(i = 0; i < length; i++){
 		encrypted[i] = isiFile[i] - (100-(key+i)); 

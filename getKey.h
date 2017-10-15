@@ -8,12 +8,15 @@ int getKey() {
 	int keysLength = 0;
 	char keys[32];
 	
+	// Meminta user untuk menulis key
 	printf("\n\n Tulis key: ");
 	scanf(" %[^\n]%*c", &keys);
 	
+	// Mencari berapa panjang key yang ditulis user
 	while(keys[keysLength] != '\0') keysLength++;
 	int lastIndex = keysLength - 1;
 	
+	// Melakukan bubble sort terhadap key, mengurutkan kode ASCII dari kecil ke besar
 	for (i=0; i<lastIndex; i++) {
 		for(j=lastIndex; j>i; j--) {
 			if(keys[j] < keys[j-1]) {
@@ -24,5 +27,6 @@ int getKey() {
 		}
 	}
 	
+	// Ouput fungsi ini ialah kode ASCII dari median key
 	return keys[keysLength/2];
 }
