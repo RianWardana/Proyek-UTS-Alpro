@@ -3,65 +3,54 @@
 
 #include <stdio.h>
 
-void decrypt(int size){
-	int decrypted[size], i=0, j, keys;
-	char fname[200],teks[10000];
+void decrypt(int maxSize){
+	int i = 0, length = 0;
+	char fname[200], isiFile[10000];
 	
 	printf(" Tulis nama file: ");
 	scanf("%s", &fname);
-		
+	
 	FILE *fp;
-	fp = fopen(fname,"r");
+	fp = fopen(fname, "r");
 	
 	if(fp == NULL){
 		printf(" File tidak ditemukan.");
 		sleep(1);
 		mainMenu();
 	}
-		
-	for(i=0;i<size;i++){
-		fscanf(fp,"%c",&teks[i]);
+	
+	for(length = 0; length < maxSize; length++){
+		fscanf(fp, "%c", &isiFile[length]);
+		if (isiFile[length] == '\0') break;
 	}
 	
 	printf(" ");
-	for(i=0;i<size;i++){
-		printf("%c",teks[i]);	
+	for(i = 0; i < length; i++){
+		printf("%c", isiFile[i]);	
 	}
-		
+	
 	fclose(fp);
 	
-	keys = getKey();
-
-	i = 0;
-	while(teks[i]!='\0'){
-		decrypted[i]=teks[i]; 
-		i++;
-	}
-	
-	for(j=0;j<i;j++){
-		decrypted[j] += (100-(keys+j));
-	}
-
-	printf("\n Data yang telah terdekripsi adalah: \n ");
-	for(j=0;j<i;j++){
-		printf("%c",decrypted[j]);
-	}
-	printf("\n\n Data terdekripsi telah ditulis ke decrypted.txt\n");
-	
-	//write array to decrypted.txt
 	FILE *ofp;
 	ofp = fopen("decrypted.txt","w");
 	
 	if(fp == NULL){
-		printf(" Failed to open");
+		printf(" Failed to open.");
 		sleep(1);
 		mainMenu();
 	}
 	
-	for(i=0;i<j;i++){
-		fprintf(ofp,"%c",decrypted[i]);
+	int key = getKey();
+	int decrypted[length];
+	
+	printf("\n Data yang telah terdekripsi adalah: \n ");
+	for(i = 0; i < length; i++){
+		decrypted[i] = isiFile[i] + (100-(key+i)); 
+		printf("%c", decrypted[i]);
+		fprintf(ofp, "%c", decrypted[i]);
 	}
 	
 	fclose(ofp);
 	
+	printf("\n\n Data terdekripsi telah ditulis ke decrypted.txt\n");
 }

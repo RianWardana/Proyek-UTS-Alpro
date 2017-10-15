@@ -28,13 +28,13 @@ void encrypt(int maxSize){
 		if (isiFile[length] == '\0') break;
 	}
 	
-	fclose(fp);
-	
 	// Mencetak isi file
 	printf(" ");
 	for(i = 0; i < length; i++){
 		printf("%c", isiFile[i]);	
 	}
+	
+	fclose(fp);
 	
 	// Menyiapkan variabel untuk mengakses file tempat data terenkripsi disimpan
 	FILE *ofp;
